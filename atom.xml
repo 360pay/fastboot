@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Fastboot...</title>
+  <subtitle>Hi,Welcome To My Blog.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://fastboot.cn/"/>
+  <updated>2017-02-02T17:27:26.923Z</updated>
+  <id>http://fastboot.cn/</id>
+  
+  <author>
+    <name>Halifa</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hahh</title>
+    <link href="http://fastboot.cn/2017/02/02/hahh/"/>
+    <id>http://fastboot.cn/2017/02/02/hahh/</id>
+    <published>2017-02-02T12:27:26.000Z</published>
+    <updated>2017-02-02T17:27:26.923Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
