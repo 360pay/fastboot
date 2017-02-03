@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fastboot.cn/"/>
-  <updated>2017-02-03T02:43:08.772Z</updated>
+  <updated>2017-02-03T03:46:59.542Z</updated>
   <id>http://fastboot.cn/</id>
   
   <author>
@@ -16,11 +16,81 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VPS促销价格</title>
+    <link href="http://fastboot.cn/2017/02/03/vpscuxiao/"/>
+    <id>http://fastboot.cn/2017/02/03/vpscuxiao/</id>
+    <published>2017-02-03T12:27:26.000Z</published>
+    <updated>2017-02-03T03:46:59.542Z</updated>
+    
+    <content type="html"><![CDATA[<p>###VPS新年促销价格</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>CPU</th>
+<th>RAM</th>
+<th>Space</th>
+<th>Transfer</th>
+<th>price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Core</td>
+<td>512Mb</td>
+<td>20GB</td>
+<td>1TB</td>
+<td>50￥</td>
+</tr>
+<tr>
+<td>2 Core</td>
+<td>1GB</td>
+<td>30GB</td>
+<td>2TB</td>
+<td>100￥</td>
+</tr>
+<tr>
+<td>3 Core</td>
+<td>2GB</td>
+<td>40GB</td>
+<td>3TB</td>
+<td>200￥</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>店铺地址<a href="https://helang20.taobao.com" target="_blank" rel="external">https://helang20.taobao.com</a></p>
+</blockquote>
+<p>~先买先得，库存有限~</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;###VPS新年促销价格&lt;/p&gt;
+&lt;hr&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;CPU&lt;/th&gt;
+&lt;th&gt;RAM&lt;/th&gt;
+&lt;th&gt;Space&lt;/th&gt;
+&lt;th&gt;Transfer&lt;/th&gt;
+&lt;th&gt;price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbod
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>putty小技巧</title>
     <link href="http://fastboot.cn/2017/02/02/putty-xiaojieqiao/"/>
     <id>http://fastboot.cn/2017/02/02/putty-xiaojieqiao/</id>
     <published>2017-02-02T12:27:26.000Z</published>
-    <updated>2017-02-03T02:43:08.772Z</updated>
+    <updated>2017-02-03T03:45:41.043Z</updated>
     
     <content type="html"><![CDATA[<p>安装putty完设置好windows系统环境变量之后<br>可以打开CMD窗口<br>直接执行以下命令.</p>
 <blockquote>
