@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fastboot.cn/"/>
-  <updated>2017-02-03T02:31:13.383Z</updated>
+  <updated>2017-02-03T02:32:35.683Z</updated>
   <id>http://fastboot.cn/</id>
   
   <author>
@@ -16,23 +16,23 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>puttyС����</title>
+    <title>putty小技巧</title>
     <link href="http://fastboot.cn/2017/02/02/hahh/"/>
     <id>http://fastboot.cn/2017/02/02/hahh/</id>
     <published>2017-02-02T12:27:26.000Z</published>
-    <updated>2017-02-03T02:31:13.383Z</updated>
+    <updated>2017-02-03T02:32:35.683Z</updated>
     
-    <content type="html"><![CDATA[<p>��װputty�����ú�windowsϵͳ��������֮��<br>���Դ�CMD����<br>ֱ��ִ����������.</p>
+    <content type="html"><![CDATA[<p>安装putty完设置好windows系统环境变量之后<br>可以打开CMD窗口<br>直接执行以下命令.</p>
 <blockquote>
-<p>ͨ��telnetЭ������<br><code>putty -telnet 183.60.137.1</code><br>ͨ��sshЭ������<br><code>putty -ssh 183.60.137.109 -P 11021  -l root -pw 416bcbe8af2704b27d508977bc</code><br>ͨ������һ��putty�ѱ����session������<br><code>putty -load &quot;cacti&quot;     -pw 416bcbe8af2704b27d508977bc</code></p>
+<p>通过telnet协议连接<br><code>putty -telnet 183.60.137.1</code><br>通过ssh协议连接<br><code>putty -ssh 183.60.137.109 -P 11021  -l root -pw 416bcbe8af2704b27d508977bc</code><br>通过载入一个putty已保存的session来连接<br><code>putty -load &quot;cacti&quot;     -pw 416bcbe8af2704b27d508977bc</code></p>
 </blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;��װputty�����ú�windowsϵͳ��������֮��&lt;br&gt;���Դ�CMD����&lt;br&gt;ֱ��ִ����������.&lt;/p&gt;
+      &lt;p&gt;安装putty完设置好windows系统环境变量之后&lt;br&gt;可以打开CMD窗口&lt;br&gt;直接执行以下命令.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;ͨ��telnetЭ������&lt;br&gt;&lt;code&gt;putty -telnet 183.60
+&lt;p&gt;通过telnet协议连接&lt;br&gt;&lt;code&gt;putty -telnet 183.60.137.1&lt;/code&gt;&lt;br&gt;通过ssh
     
     </summary>
     
