@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://fastboot.cn/2017/02/25/kvm-2/index.html">
 <meta property="og:site_name" content="Fastboot...">
 <meta property="og:description" content="[root@localhost ~]# cd /etc/sysconfig/network-scripts/[root@localhost ~]# cp ifcfg-em1 /root#备份一份[root@localhost ~]# cp ifcfg-em1 ifcfg-br0#复制一份作为桥接的[root@localhost ~]# vi ifcfg-em1TYPE=EthernetBOOTPR">
-<meta property="og:updated_time" content="2017-02-25T11:40:56.758Z">
+<meta property="og:updated_time" content="2017-02-25T11:42:49.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二、KVM中创建桥接网络">
 <meta name="twitter:description" content="[root@localhost ~]# cd /etc/sysconfig/network-scripts/[root@localhost ~]# cp ifcfg-em1 /root#备份一份[root@localhost ~]# cp ifcfg-em1 ifcfg-br0#复制一份作为桥接的[root@localhost ~]# vi ifcfg-em1TYPE=EthernetBOOTPR">
@@ -168,7 +168,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><code>[root@localhost ~]# cd /etc/sysconfig/network-scripts/</code><br><code>[root@localhost ~]# cp ifcfg-em1 /root</code>#备份一份<br><code>[root@localhost ~]# cp ifcfg-em1 ifcfg-br0</code>#复制一份作为桥接的<br><code>[root@localhost ~]# vi ifcfg-em1</code><br>TYPE=Ethernet<br>BOOTPROTO=none<br>NAME=em1<br>UUID=c67149b4-1c27-439f-8964-4df086d007bf<br>DEVICE=em1<br>ONBOOT=yes<br>BRIDGE=br0<br><code>[root@localhost ~]# vi ifcfg-br0</code><br>TYPE=bridge<br>BOOTPROTO=none<br>DEVICE=br0<br>ONBOOT=yes<br>IPADDR=202.97.10.18<br>PREFIX=26<br>GATEWAY=202.97.10.1<br><code>[root@localhost ~]# service network restart</code></p>
+            <p><code>[root@localhost ~]# cd /etc/sysconfig/network-scripts/</code><br><code>[root@localhost ~]# cp ifcfg-em1 /root</code>#备份一份<br><code>[root@localhost ~]# cp ifcfg-em1 ifcfg-br0</code>#复制一份作为桥接的<br><code>[root@localhost ~]# vi ifcfg-em1</code><br>TYPE=Ethernet<br>BOOTPROTO=none<br>UUID=c67149b4-1c27-439f-8964-4df086d007bf<br>DEVICE=em1<br>ONBOOT=yes<br>BRIDGE=br0<br><code>[root@localhost ~]# vi ifcfg-br0</code><br>TYPE=bridge<br>BOOTPROTO=none<br>DEVICE=br0<br>ONBOOT=yes<br>IPADDR=202.97.10.18<br>PREFIX=26<br>GATEWAY=202.97.10.1<br><code>[root@localhost ~]# service network restart</code></p>
 
         </div>
 
@@ -176,7 +176,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-25T11:40:56.758Z" itemprop="dateUpdated">2017年2月25日 6:40</time>
+    最后更新时间：<time datetime="2017-02-25T11:42:49.227Z" itemprop="dateUpdated">2017年2月25日 6:42</time>
 </span><br>
 
 
