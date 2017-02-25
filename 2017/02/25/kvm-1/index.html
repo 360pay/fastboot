@@ -30,7 +30,7 @@
 <meta property="og:description" content="刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面
 
 [root@localhost ~]# mkdir /mnt/cdrom[root@localhost ~]# mount -o loop -t iso9660 /home/iso/CentOS-7-x86_6">
-<meta property="og:updated_time" content="2017-02-25T10:54:13.916Z">
+<meta property="og:updated_time" content="2017-02-25T10:57:59.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一、部署KVM">
 <meta name="twitter:description" content="刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面
@@ -175,7 +175,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面</p>
+<p>刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载<a href="http://mirrors.ustc.edu.cn/centos/7.3.1611/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso" target="_blank" rel="external">CentOS-7-x86_64-DVD-1611.iso</a>到系统里面</p>
 </blockquote>
 <p><code>[root@localhost ~]# mkdir /mnt/cdrom</code><br><code>[root@localhost ~]# mount -o loop -t iso9660 /home/iso/CentOS-7-x86_64-DVD-1611.iso /mnt/cdrom/</code><br><code>[root@localhost ~]# cd /etc/yum.repos.d/</code><br><code>[root@localhost ~]# mkdir repos.bak &amp;&amp; mv *.repo repos.bak/</code><br><code>[root@localhost ~]# vi CentOS-Local.repo</code><br>[localcdrom]<br>name=CentOS-$releasever -Local CDROM<br>baseurl=file:///mnt/cdrom<br>gpgcheck=0<br>enabled=1<br><code>[root@localhost ~]# yum clean all</code><br><code>[root@localhost ~]# yum groupinstall &quot;virtualization-hypervisor&quot; &quot;virtualization-platform&quot; &quot;virtualization-tools&quot; &quot;virtualization-client&quot; &quot;X Window System&quot;  -y</code></p>
 
@@ -185,7 +185,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-25T10:54:13.916Z" itemprop="dateUpdated">2017年2月25日 5:54</time>
+    最后更新时间：<time datetime="2017-02-25T10:57:59.759Z" itemprop="dateUpdated">2017年2月25日 5:57</time>
 </span><br>
 
 

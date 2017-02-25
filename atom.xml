@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fastboot.cn/"/>
-  <updated>2017-02-25T10:54:13.916Z</updated>
+  <updated>2017-02-25T10:57:59.759Z</updated>
   <id>http://fastboot.cn/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://fastboot.cn/2017/02/25/kvm-1/"/>
     <id>http://fastboot.cn/2017/02/25/kvm-1/</id>
     <published>2017-02-25T05:49:25.000Z</published>
-    <updated>2017-02-25T10:54:13.916Z</updated>
+    <updated>2017-02-25T10:57:59.759Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面</p>
+<p>刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载<a href="http://mirrors.ustc.edu.cn/centos/7.3.1611/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso" target="_blank" rel="external">CentOS-7-x86_64-DVD-1611.iso</a>到系统里面</p>
 </blockquote>
 <p><code>[root@localhost ~]# mkdir /mnt/cdrom</code><br><code>[root@localhost ~]# mount -o loop -t iso9660 /home/iso/CentOS-7-x86_64-DVD-1611.iso /mnt/cdrom/</code><br><code>[root@localhost ~]# cd /etc/yum.repos.d/</code><br><code>[root@localhost ~]# mkdir repos.bak &amp;&amp; mv *.repo repos.bak/</code><br><code>[root@localhost ~]# vi CentOS-Local.repo</code><br>[localcdrom]<br>name=CentOS-$releasever -Local CDROM<br>baseurl=file:///mnt/cdrom<br>gpgcheck=0<br>enabled=1<br><code>[root@localhost ~]# yum clean all</code><br><code>[root@localhost ~]# yum groupinstall &quot;virtualization-hypervisor&quot; &quot;virtualization-platform&quot; &quot;virtualization-tools&quot; &quot;virtualization-client&quot; &quot;X Window System&quot;  -y</code></p>
 ]]></content>
@@ -31,9 +31,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;code&gt;[roo
+&lt;p&gt;刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载&lt;a href=&quot;http://mirrors.ustc.edu.cn/centos/7.3.1611/isos/x86_64/C
     
     </summary>
     
