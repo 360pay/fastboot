@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fastboot.cn/"/>
-  <updated>2017-02-03T08:21:23.311Z</updated>
+  <updated>2017-02-25T05:46:56.002Z</updated>
   <id>http://fastboot.cn/</id>
   
   <author>
@@ -16,11 +16,91 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>xenserver-iso-4g</title>
+    <link href="http://fastboot.cn/2017/02/24/xenserver-iso-4g/"/>
+    <id>http://fastboot.cn/2017/02/24/xenserver-iso-4g/</id>
+    <published>2017-02-25T00:46:55.000Z</published>
+    <updated>2017-02-25T05:46:56.002Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SoftEther-Install</title>
+    <link href="http://fastboot.cn/2017/02/12/SoftEther/"/>
+    <id>http://fastboot.cn/2017/02/12/SoftEther/</id>
+    <published>2017-02-12T22:48:05.000Z</published>
+    <updated>2017-02-13T04:15:19.841Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一、安装编译环境"><a href="#一、安装编译环境" class="headerlink" title="一、安装编译环境"></a>一、安装编译环境</h4><blockquote>
+<p>yum -y install gcc zlib-devel openssl-devel readline-devel ncurses-devel </p>
+</blockquote>
+<h4 id="二、下载软件包"><a href="#二、下载软件包" class="headerlink" title="二、下载软件包"></a>二、下载软件包</h4><blockquote>
+<p>wget <a href="http://www.softether-download.com/files/softether/v4.20-9608-rtm-2016.04.17-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz" target="_blank" rel="external">http://www.softether-download.com/files/softether/v4.20-9608-rtm-2016.04.17-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz</a> </p>
+</blockquote>
+<h4 id="三、解压、编译、设置权限"><a href="#三、解压、编译、设置权限" class="headerlink" title="三、解压、编译、设置权限"></a>三、解压、编译、设置权限</h4><blockquote>
+<p>tar xzvf vpnserver-5070-rtm-linux-x86.tar.gz<br>make<br>chmod 600 *<br>chmod 700 vpncmd<br>chmod 700 vpnserver </p>
+</blockquote>
+<h4 id="四、移动到其他的目录"><a href="#四、移动到其他的目录" class="headerlink" title="四、移动到其他的目录"></a>四、移动到其他的目录</h4><blockquote>
+<p>cd ..<br>mv vpnserver/ /usr/local/ </p>
+</blockquote>
+<h4 id="五、编辑service-服务文件"><a href="#五、编辑service-服务文件" class="headerlink" title="五、编辑service 服务文件"></a>五、编辑service 服务文件</h4><blockquote>
+<p>vi /etc/init.d/vpnserver</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"># chkconfig: 2345 99 01</div><div class="line"># description: SoftEther VPN Server</div><div class="line">DAEMON=/usr/local/vpnserver/vpnserver</div><div class="line">LOCK=/var/lock/subsys/vpnserver</div><div class="line">test -x $DAEMON || exit 0</div><div class="line">case &quot;$1&quot; in</div><div class="line">start)</div><div class="line">$DAEMON start</div><div class="line">touch $LOCK</div><div class="line">;;</div><div class="line">stop)</div><div class="line">$DAEMON stop</div><div class="line">rm $LOCK</div><div class="line">;;</div><div class="line">restart)</div><div class="line">$DAEMON stop</div><div class="line">sleep 3</div><div class="line">$DAEMON start</div><div class="line">;;</div><div class="line">*)</div><div class="line">echo &quot;Usage: $0 &#123;start|stop|restart&#125;&quot;</div><div class="line">exit 1</div><div class="line">esac</div><div class="line">exit 0</div></pre></td></tr></table></figure>
+<h4 id="六、设置自动启动"><a href="#六、设置自动启动" class="headerlink" title="六、设置自动启动"></a>六、设置自动启动</h4><blockquote>
+<p>chmod 755 /etc/init.d/vpnserver<br>/sbin/chkconfig –add vpnserver<br>/etc/init.d/vpnserver start </p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一、安装编译环境&quot;&gt;&lt;a href=&quot;#一、安装编译环境&quot; class=&quot;headerlink&quot; title=&quot;一、安装编译环境&quot;&gt;&lt;/a&gt;一、安装编译环境&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;yum -y install gcc zlib-devel ope
+    
+    </summary>
+    
+    
+      <category term="vpn" scheme="http://fastboot.cn/tags/vpn/"/>
+    
+      <category term="SoftEther" scheme="http://fastboot.cn/tags/SoftEther/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xenserver如何完美的创建本地ISO库</title>
+    <link href="http://fastboot.cn/2017/02/03/xen-iso/"/>
+    <id>http://fastboot.cn/2017/02/03/xen-iso/</id>
+    <published>2017-02-03T17:27:26.000Z</published>
+    <updated>2017-02-13T04:15:19.843Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一、xenserver推荐的方式是"><a href="#一、xenserver推荐的方式是" class="headerlink" title="一、xenserver推荐的方式是"></a>一、xenserver推荐的方式是</h4><p>使用一个服务器之外的共享存储挂载iso文件。由于新买的服务器cpu与原有的池不兼容，所以暂时先使用本地存储的iso库。由于xcp主机默认的根分区只有4G的存储空间，一两个iso文件就会导致主机空间使用完。</p>
+<h4 id="二、首先查看分区"><a href="#二、首先查看分区" class="headerlink" title="二、首先查看分区"></a>二、首先查看分区</h4><p><code>df -h</code><br>Filesystem            Size  Used Avail Use% Mounted on<br>/dev/sda1             4.0G  1.8G  2.0G  47% /<br>none                  298M   36K  298M   1% /dev/shm<br>/opt/xensource/packages/iso/XenCenter.iso  56M   56M     0 100% /var/xen/xc-install<br>/dev/mapper/XSLocalEXT–9c2b431b–6e37–dbbd–9c2d–96804449f3cc-9c2b431b–6e37–dbbd–9c2d–96804449f3cc   542G  4.9G  509G   1% /var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc<br>看到了吧，跟分区总共才4G大小，我们首先在/var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc（硬盘的存储分区放vm虚拟机的）创建一个目录取名叫iso，以后的ISO文件都上传到这里</p>
+<h4 id="三、然后我们到-根分区创建一个软链接。不做软链接的话，空间不足。"><a href="#三、然后我们到-根分区创建一个软链接。不做软链接的话，空间不足。" class="headerlink" title="三、然后我们到/根分区创建一个软链接。不做软链接的话，空间不足。"></a>三、然后我们到/根分区创建一个软链接。不做软链接的话，空间不足。</h4><p><code>ln -s /var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc/iso /iso</code></p>
+<h4 id="四、然后我们再创建ISO库"><a href="#四、然后我们再创建ISO库" class="headerlink" title="四、然后我们再创建ISO库"></a>四、然后我们再创建ISO库</h4><p><code>xe sr-create name-label=ISO type=iso device-config:location=/iso  device-config:legacy_mode=true content-type=iso</code><br>然后再去看下是不是多了一个本地的ISO库。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一、xenserver推荐的方式是&quot;&gt;&lt;a href=&quot;#一、xenserver推荐的方式是&quot; class=&quot;headerlink&quot; title=&quot;一、xenserver推荐的方式是&quot;&gt;&lt;/a&gt;一、xenserver推荐的方式是&lt;/h4&gt;&lt;p&gt;使用一个服务器之外的
+    
+    </summary>
+    
+    
+      <category term="xen" scheme="http://fastboot.cn/tags/xen/"/>
+    
+  </entry>
+  
+  <entry>
     <title>VPS促销价格</title>
     <link href="http://fastboot.cn/2017/02/03/vpscuxiao/"/>
     <id>http://fastboot.cn/2017/02/03/vpscuxiao/</id>
     <published>2017-02-03T12:27:26.000Z</published>
-    <updated>2017-02-03T08:21:23.311Z</updated>
+    <updated>2017-02-13T04:15:20.492Z</updated>
     
     <content type="html"><![CDATA[<h3 id="VPS新年促销价格"><a href="#VPS新年促销价格" class="headerlink" title="VPS新年促销价格"></a>VPS新年促销价格</h3><hr>
 <table>
@@ -83,7 +163,7 @@
     <link href="http://fastboot.cn/2017/02/02/putty-xiaojieqiao/"/>
     <id>http://fastboot.cn/2017/02/02/putty-xiaojieqiao/</id>
     <published>2017-02-02T12:27:26.000Z</published>
-    <updated>2017-02-03T08:21:22.358Z</updated>
+    <updated>2017-02-13T04:15:20.889Z</updated>
     
     <content type="html"><![CDATA[<p>安装putty完设置好windows系统环境变量之后<br>可以打开CMD窗口<br>直接执行以下命令.</p>
 <blockquote>

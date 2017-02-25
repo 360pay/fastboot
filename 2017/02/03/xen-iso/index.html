@@ -13,35 +13,26 @@
     
     
     
-    <title>putty小技巧 | Fastboot... | Hi,Welcome To My Blog.</title>
+    <title>xenserver如何完美的创建本地ISO库 | Fastboot... | Hi,Welcome To My Blog.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="putty">
-    <meta name="description" content="安装putty完设置好windows系统环境变量之后可以打开CMD窗口直接执行以下命令.
-
-通过telnet协议连接putty -telnet 1.1.1.1
-通过ssh协议连接putty -ssh 1.1.1.109 -P 11021  -l root -pw 416bcbe8af2704b27d508977bc 
-通过载入一个putty已保存的session来连接putty -load &amp;qu">
+    <meta name="keywords" content="xen">
+    <meta name="description" content="一、xenserver推荐的方式是使用一个服务器之外的共享存储挂载iso文件。由于新买的服务器cpu与原有的池不兼容，所以暂时先使用本地存储的iso库。由于xcp主机默认的根分区只有4G的存储空间，一两个iso文件就会导致主机空间使用完。
+二、首先查看分区df -hFilesystem            Size  Used Avail Use% Mounted on/dev/sda1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="putty小技巧">
-<meta property="og:url" content="http://fastboot.cn/2017/02/02/putty-xiaojieqiao/index.html">
+<meta property="og:title" content="xenserver如何完美的创建本地ISO库">
+<meta property="og:url" content="http://fastboot.cn/2017/02/03/xen-iso/index.html">
 <meta property="og:site_name" content="Fastboot...">
-<meta property="og:description" content="安装putty完设置好windows系统环境变量之后可以打开CMD窗口直接执行以下命令.
-
-通过telnet协议连接putty -telnet 1.1.1.1
-通过ssh协议连接putty -ssh 1.1.1.109 -P 11021  -l root -pw 416bcbe8af2704b27d508977bc 
-通过载入一个putty已保存的session来连接putty -load &amp;qu">
-<meta property="og:updated_time" content="2017-02-13T04:15:20.889Z">
+<meta property="og:description" content="一、xenserver推荐的方式是使用一个服务器之外的共享存储挂载iso文件。由于新买的服务器cpu与原有的池不兼容，所以暂时先使用本地存储的iso库。由于xcp主机默认的根分区只有4G的存储空间，一两个iso文件就会导致主机空间使用完。
+二、首先查看分区df -hFilesystem            Size  Used Avail Use% Mounted on/dev/sda1">
+<meta property="og:updated_time" content="2017-02-13T04:15:19.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="putty小技巧">
-<meta name="twitter:description" content="安装putty完设置好windows系统环境变量之后可以打开CMD窗口直接执行以下命令.
-
-通过telnet协议连接putty -telnet 1.1.1.1
-通过ssh协议连接putty -ssh 1.1.1.109 -P 11021  -l root -pw 416bcbe8af2704b27d508977bc 
-通过载入一个putty已保存的session来连接putty -load &amp;qu">
+<meta name="twitter:title" content="xenserver如何完美的创建本地ISO库">
+<meta name="twitter:description" content="一、xenserver推荐的方式是使用一个服务器之外的共享存储挂载iso文件。由于新买的服务器cpu与原有的池不兼容，所以暂时先使用本地存储的iso库。由于xcp主机默认的根分区只有4G的存储空间，一两个iso文件就会导致主机空间使用完。
+二、首先查看分区df -hFilesystem            Size  Used Avail Use% Mounted on/dev/sda1">
     
         <link rel="alternative" href="/atom.xml" title="Fastboot..." type="application/atom+xml">
     
@@ -118,7 +109,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">putty小技巧</div>
+        <div class="flex-col header-title ellipsis">xenserver如何完美的创建本地ISO库</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -140,11 +131,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">putty小技巧</h1>
+        <h1 class="title">xenserver如何完美的创建本地ISO库</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-02-02T12:27:26.000Z" itemprop="datePublished" class="page-time">
-  2017-02-02
+                <time datetime="2017-02-03T17:27:26.000Z" itemprop="datePublished" class="page-time">
+  2017-02-03
 </time>
 
 
@@ -159,13 +150,20 @@
 
 <div class="container body-wrap">
     
-<article id="post-putty-xiaojieqiao"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、xenserver推荐的方式是"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、xenserver推荐的方式是</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、首先查看分区"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、首先查看分区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三、然后我们到-根分区创建一个软链接。不做软链接的话，空间不足。"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、然后我们到/根分区创建一个软链接。不做软链接的话，空间不足。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四、然后我们再创建ISO库"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、然后我们再创建ISO库</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-xen-iso"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">putty小技巧</h1>
+        <h1 class="post-card-title">xenserver如何完美的创建本地ISO库</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017年02月02日 7:27" datetime="2017-02-02T12:27:26.000Z"  itemprop="datePublished">2017-02-02</time>
+            <time class="post-time" title="2017年02月03日 12:27" datetime="2017-02-03T17:27:26.000Z"  itemprop="datePublished">2017-02-03</time>
 
             
 
@@ -180,12 +178,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>安装putty完设置好windows系统环境变量之后<br>可以打开CMD窗口<br>直接执行以下命令.</p>
-<blockquote>
-<p>通过telnet协议连接<br><code>putty -telnet 1.1.1.1</code></p>
-<p>通过ssh协议连接<br><code>putty -ssh 1.1.1.109 -P 11021  -l root -pw 416bcbe8af2704b27d508977bc</code> </p>
-<p>通过载入一个putty已保存的session来连接<br><code>putty -load &quot;cacti&quot;     -pw 416bcbe8af2704b27d508977bc</code></p>
-</blockquote>
+            <h4 id="一、xenserver推荐的方式是"><a href="#一、xenserver推荐的方式是" class="headerlink" title="一、xenserver推荐的方式是"></a>一、xenserver推荐的方式是</h4><p>使用一个服务器之外的共享存储挂载iso文件。由于新买的服务器cpu与原有的池不兼容，所以暂时先使用本地存储的iso库。由于xcp主机默认的根分区只有4G的存储空间，一两个iso文件就会导致主机空间使用完。</p>
+<h4 id="二、首先查看分区"><a href="#二、首先查看分区" class="headerlink" title="二、首先查看分区"></a>二、首先查看分区</h4><p><code>df -h</code><br>Filesystem            Size  Used Avail Use% Mounted on<br>/dev/sda1             4.0G  1.8G  2.0G  47% /<br>none                  298M   36K  298M   1% /dev/shm<br>/opt/xensource/packages/iso/XenCenter.iso  56M   56M     0 100% /var/xen/xc-install<br>/dev/mapper/XSLocalEXT–9c2b431b–6e37–dbbd–9c2d–96804449f3cc-9c2b431b–6e37–dbbd–9c2d–96804449f3cc   542G  4.9G  509G   1% /var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc<br>看到了吧，跟分区总共才4G大小，我们首先在/var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc（硬盘的存储分区放vm虚拟机的）创建一个目录取名叫iso，以后的ISO文件都上传到这里</p>
+<h4 id="三、然后我们到-根分区创建一个软链接。不做软链接的话，空间不足。"><a href="#三、然后我们到-根分区创建一个软链接。不做软链接的话，空间不足。" class="headerlink" title="三、然后我们到/根分区创建一个软链接。不做软链接的话，空间不足。"></a>三、然后我们到/根分区创建一个软链接。不做软链接的话，空间不足。</h4><p><code>ln -s /var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc/iso /iso</code></p>
+<h4 id="四、然后我们再创建ISO库"><a href="#四、然后我们再创建ISO库" class="headerlink" title="四、然后我们再创建ISO库"></a>四、然后我们再创建ISO库</h4><p><code>xe sr-create name-label=ISO type=iso device-config:location=/iso  device-config:legacy_mode=true content-type=iso</code><br>然后再去看下是不是多了一个本地的ISO库。</p>
 
         </div>
 
@@ -193,11 +189,11 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-13T04:15:20.889Z" itemprop="dateUpdated">2017年2月12日 23:15</time>
+    最后更新时间：<time datetime="2017-02-13T04:15:19.843Z" itemprop="dateUpdated">2017年2月12日 23:15</time>
 </span><br>
 
 
-        转载请注明出处：<a href="/2017/02/02/putty-xiaojieqiao/" target="_blank" rel="external">http://fastboot.cn/2017/02/02/putty-xiaojieqiao/</a>
+        转载请注明出处：<a href="/2017/02/03/xen-iso/" target="_blank" rel="external">http://fastboot.cn/2017/02/03/xen-iso/</a>
     </div>
     <footer>
         <a href="http://fastboot.cn">
@@ -216,7 +212,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/putty/">putty</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xen/">xen</a></li></ul>
 
 
             
@@ -226,7 +222,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/&title=《putty小技巧》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/03/xen-iso/&title=《xenserver如何完美的创建本地ISO库》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -236,22 +232,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/&title=《putty小技巧》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/03/xen-iso/&title=《xenserver如何完美的创建本地ISO库》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/03/xen-iso/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《putty小技巧》 — Fastboot...&url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/&via=http://fastboot.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《xenserver如何完美的创建本地ISO库》 — Fastboot...&url=http://fastboot.cn/2017/02/03/xen-iso/&via=http://fastboot.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/03/xen-iso/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -274,13 +270,20 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/02/03/vpscuxiao/" id="post-prev" class="post-nav-link">
+      <a href="/2017/02/12/SoftEther/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">VPS促销价格</h4>
+        <h4 class="title">SoftEther-Install</h4>
       </a>
     </div>
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/02/03/vpscuxiao/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">VPS促销价格</h4>
+      </a>
+    </div>
   
 </nav>
 
@@ -289,7 +292,7 @@
     
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="putty-xiaojieqiao" data-title="putty小技巧" data-url="http://fastboot.cn/2017/02/02/putty-xiaojieqiao/"></div>
+    <div class="ds-thread" data-thread-key="xen-iso" data-title="xenserver如何完美的创建本地ISO库" data-url="http://fastboot.cn/2017/02/03/xen-iso/"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
@@ -371,7 +374,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/&title=《putty小技巧》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/03/xen-iso/&title=《xenserver如何完美的创建本地ISO库》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -381,22 +384,22 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/&title=《putty小技巧》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/03/xen-iso/&title=《xenserver如何完美的创建本地ISO库》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/03/xen-iso/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《putty小技巧》 — Fastboot...&url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/&via=http://fastboot.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《xenserver如何完美的创建本地ISO库》 — Fastboot...&url=http://fastboot.cn/2017/02/03/xen-iso/&via=http://fastboot.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/02/putty-xiaojieqiao/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/03/xen-iso/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -407,7 +410,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3a0WrDMAwF0P7/T3ewp8FW90pKB7GPn0ZYHJ8NhGTp8YjX83v9fvJzJc/zdx+fWBgYGLdlPJdrfYh8t3yfNfjl1zEwMA5grIPseos3H2jtlp8NAwMDI9m6GoJ738XAwMDIQ2QPlgRrDAwMjDUjKT7zT0ZlZ8y4uBbHwMC4IaPaGPjPnz/Y38DAwLgJ41lc8yCbJ5SFU2FgYGzNWG+Xj1xUi95qyzMKxxgYGJsyquGvmt71WgL5YAcGBsYJjF6LsXpNNnkStQQwMDAOYFTbkFeljFe1HzAwMPZm9Aa8JgMW85obAwMDo9dQzNO76mBHFIgxMDC2ZuTFYbVk7c1FrHeLhsMwMDA2ZSRFZm9IYhKC8z8HBgbGmYx8anSduuXBej7MgYGBcRojP1aV3XsruhDEwMDYlJFfzfdakr2wW21FYGBg7M1I4nFveGu+Q7W9ioGBcQKjGmTn5WveMCiTMDAwtmNMRrWSj01aCDkMAwNjV0Z+BTYBTJLC0f8BAwNjI0ayxfzoeVmbp4l/3BpiYGBsxyhcuA/ajfNGZhR8MTAwNmX0wlx1LGPSNojCOgYGxtaMSTDtJZTVEYreYAcGBsZ+jGq5eFU4zlPA6NoOAwPjAMbkgr58NTYYL3t5ZgwMDIwgNSzMd7RGxN68i4GBgRGnaJ9IHKNgjYGBcQCjmvxVR76qv1ltGGBgYOzNmA9S9C7p8ibBvADGwMC4LeMLhwxW5JpHOOUAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByElEQVR42u3aUY4CIRAE0L3/pWcPYHasahhWk8eXUZQ3fpCmmp+feFwv4/XT15n5O5sHLi7uMve6HfdzZqvcP+SbVXBxcQ9y/1ogmZM/3v38ewMuLu63cHfNxMXF/XZuXgzNyh1cXNzP4eYlyPrhpy2JcHFxz3PzxZ57/Ui+i4uLO+Je5chLltnvv1kdFxf3CDffUNYj0dlGhouL+7/cfDPKmyttCJJ4cHFxT3KTsHJ2urrf/vJtERcX9ww3iUHbS1rJQ7aBLC4u7nluvmR+mMnn5wUWLi7uSW5+aEkepm3ZFte8cHFxj3CLMKI82CTlTv66znJwcXEXuO2WtH4tI08+35zVcHFxH+O2Qcas4ZrXJ1GZhYuLe5C7cmGibbrkhdSwJ4yLi7uJOwss2oVnbZg3WQ4uLu5j3DwwbbewvNwpDj+4uLhHuG3OOmu6tCFs0WnBxcXdxL3K0RYxs/eHVRIuLu4mbru55FFpXty0bRVcXNwz3DawmF3Yyv+CpUIHFxd3K7fdaGYlS9s+iXrCuLi4H8Ntv7tytWvDRoaLi3uQ256rNrRncHFxD3LzgCMvd5JIpW3w4OLinuHOGp8tbv3XcHFxj3B/AU38Cwm3YRq7AAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
