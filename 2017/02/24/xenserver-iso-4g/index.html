@@ -13,23 +13,23 @@
     
     
     
-    <title>xenserver-iso-4g | Fastboot... | Hi,Welcome To My Blog.</title>
+    <title>突破XenServer的4G空间，建立ISO库 | Fastboot... | Hi,Welcome To My Blog.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="This is My Blog it fastboot.">
+    <meta name="keywords" content="xen">
+    <meta name="description" content="一、查看lvm分区情况[root@localhost ~]# vgdisplay  — Volume group —  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea  System ID  Format                lvm2  Metadata Areas        1  Me">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xenserver-iso-4g">
+<meta property="og:title" content="突破XenServer的4G空间，建立ISO库">
 <meta property="og:url" content="http://fastboot.cn/2017/02/24/xenserver-iso-4g/index.html">
 <meta property="og:site_name" content="Fastboot...">
-<meta property="og:description" content="This is My Blog it fastboot.">
-<meta property="og:updated_time" content="2017-02-25T05:46:56.002Z">
+<meta property="og:description" content="一、查看lvm分区情况[root@localhost ~]# vgdisplay  — Volume group —  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea  System ID  Format                lvm2  Metadata Areas        1  Me">
+<meta property="og:updated_time" content="2017-02-25T06:00:12.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xenserver-iso-4g">
-<meta name="twitter:description" content="This is My Blog it fastboot.">
+<meta name="twitter:title" content="突破XenServer的4G空间，建立ISO库">
+<meta name="twitter:description" content="一、查看lvm分区情况[root@localhost ~]# vgdisplay  — Volume group —  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea  System ID  Format                lvm2  Metadata Areas        1  Me">
     
         <link rel="alternative" href="/atom.xml" title="Fastboot..." type="application/atom+xml">
     
@@ -106,7 +106,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">xenserver-iso-4g</div>
+        <div class="flex-col header-title ellipsis">突破XenServer的4G空间，建立ISO库</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -128,7 +128,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">xenserver-iso-4g</h1>
+        <h1 class="title">突破XenServer的4G空间，建立ISO库</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-02-25T00:46:55.000Z" itemprop="datePublished" class="page-time">
@@ -147,11 +147,18 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、查看lvm分区情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、查看lvm分区情况</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、创建一个lv分区"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、创建一个lv分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三、格式化该分区"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、格式化该分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四、创建一个挂载目录点"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、创建一个挂载目录点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#五、挂载分区"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、挂载分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#六、创建iso磁盘"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、创建iso磁盘</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#七、把挂载内容写入到fstab"><span class="post-toc-number">7.</span> <span class="post-toc-text">七、把挂载内容写入到fstab</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#八、挂载脚本写入到开机启动脚本"><span class="post-toc-number">8.</span> <span class="post-toc-text">八、挂载脚本写入到开机启动脚本</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-xenserver-iso-4g"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">xenserver-iso-4g</h1>
+        <h1 class="post-card-title">突破XenServer的4G空间，建立ISO库</h1>
         <div class="post-meta">
             <time class="post-time" title="2017年02月24日 19:46" datetime="2017-02-25T00:46:55.000Z"  itemprop="datePublished">2017-02-24</time>
 
@@ -168,14 +175,28 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h5 id="一、查看lvm分区情况"><a href="#一、查看lvm分区情况" class="headerlink" title="一、查看lvm分区情况"></a>一、查看lvm分区情况</h5><p><code>[root@localhost ~]# vgdisplay</code><br>  — Volume group —<br>  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  System ID<br>  Format                lvm2<br>  Metadata Areas        1<br>  Metadata Sequence No  2<br>  VG Access             read/write<br>  VG Status             resizable<br>  MAX LV                0<br>  Cur LV                1<br>  Open LV               0<br>  Max PV                0<br>  Cur PV                1<br>  Act PV                1<br>  VG Size               141.04 GB<br>  PE Size               4.00 MB<br>  Total PE              36106<br>  Alloc PE / Size       1 / 4.00 MB<br>  Free  PE / Size       36105 / 141.04 GB<br>  VG UUID               VWGoCs-F44s-rtXU-hHv0-jCZ5-AQyS-GcPuLf<br><code>[root@localhost ~]# lvdisplay</code><br>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/MGT<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                VW5rW0-p6LA-eL16-TnxR-o3xL-n1i2-Qq8Qo8<br>  LV Write Access        read/write<br>  LV Status              available</p>
+<p>  #open                 0<br>  LV Size                4.00 MB<br>  Current LE             1<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:0</p>
+<h5 id="二、创建一个lv分区"><a href="#二、创建一个lv分区" class="headerlink" title="二、创建一个lv分区"></a>二、创建一个lv分区</h5><p><code>[root@localhost ~]# lvcreate -n iso -L +40G VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea</code><br>  Logical volume “iso” created<br><code>[root@localhost ~]# lvdisplay</code><br>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/MGT<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                VW5rW0-p6LA-eL16-TnxR-o3xL-n1i2-Qq8Qo8<br>  LV Write Access        read/write<br>  LV Status              available</p>
+<p>  #open                 0<br>  LV Size                4.00 MB<br>  Current LE             1<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:0</p>
+<p>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                392U7I-cC13-LOvu-wnGT-8MVZ-iGME-cKrVL3<br>  LV Write Access        read/write<br>  LV Status              available</p>
+<p>  #open                 0<br>  LV Size                40.00 GB<br>  Current LE             10240<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:1</p>
+<h5 id="三、格式化该分区"><a href="#三、格式化该分区" class="headerlink" title="三、格式化该分区"></a>三、格式化该分区</h5><p><code>[root@localhost ~]# mkfs.ext3 /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso</code><br>mke2fs 1.39 (29-May-2006)<br>Filesystem label=<br>OS type: Linux<br>Block size=4096 (log=2)<br>Fragment size=4096 (log=2)<br>5242880 inodes, 10485760 blocks<br>524288 blocks (5.00%) reserved for the super user<br>First data block=0<br>Maximum filesystem blocks=4294967296<br>320 block groups<br>32768 blocks per group, 32768 fragments per group<br>16384 inodes per group<br>Superblock backups stored on blocks:<br>    32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,<br>    4096000, 7962624</p>
+<p>Writing inode tables: done<br>Creating journal (32768 blocks): done<br>Writing superblocks and filesystem accounting information: done</p>
+<p>This filesystem will be automatically checked every 23 mounts or<br>180 days, whichever comes first.  Use tune2fs -c or -i to override.</p>
+<h5 id="四、创建一个挂载目录点"><a href="#四、创建一个挂载目录点" class="headerlink" title="四、创建一个挂载目录点"></a>四、创建一个挂载目录点</h5><p><code>[root@localhost ~]# mkdir /iso</code></p>
+<h5 id="五、挂载分区"><a href="#五、挂载分区" class="headerlink" title="五、挂载分区"></a>五、挂载分区</h5><p><code>[root@localhost ~]# mount /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso</code></p>
+<h5 id="六、创建iso磁盘"><a href="#六、创建iso磁盘" class="headerlink" title="六、创建iso磁盘"></a>六、创建iso磁盘</h5><p><code>[root@localhost ~]# xe-mount-iso-sr /iso -o bind</code><br><code>[root@localhost ~]# df -h</code><br>Filesystem            Size  Used Avail Use% Mounted on<br>/dev/sda1             4.0G  1.8G  2.0G  47% /<br>none                  1.9G   80K  1.9G   1% /dev/shm<br>/opt/xensource/packages/iso/XenCenter.iso<br>                       56M   56M     0 100% /var/xen/xc-install<br>/dev/mapper/VG_XenStorage–036c62ff–d373–10ec–4349–ba3ff3b211ea-iso<br>                       40G  177M   38G   1% /iso</p>
+<h5 id="七、把挂载内容写入到fstab"><a href="#七、把挂载内容写入到fstab" class="headerlink" title="七、把挂载内容写入到fstab"></a>七、把挂载内容写入到fstab</h5><p><code>[root@localhost ~]# vi /etc/fstab</code><br>LABEL=root-qhrnjadq    /         ext3     defaults   1  1<br>/var/swap/swap.001          swap      swap   defaults   0  0<br>none        /dev/pts  devpts defaults   0  0<br>none        /dev/shm  tmpfs  defaults   0  0<br>none        /proc     proc   defaults   0  0<br>none        /sys      sysfs  defaults   0  0<br>none        /sys/fs/cgroup cgroup memory 0 0<br>/opt/xensource/packages/iso/XenCenter.iso   /var/xen/xc-install   iso9660   loop,ro   0  0<br>/dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso ext3 defaults 0 0</p>
+<h5 id="八、挂载脚本写入到开机启动脚本"><a href="#八、挂载脚本写入到开机启动脚本" class="headerlink" title="八、挂载脚本写入到开机启动脚本"></a>八、挂载脚本写入到开机启动脚本</h5><p><code>[root@localhost ~]# echo &quot;xe-mount-iso-sr /iso -o bind&quot; &gt;&gt; /etc/rc.local</code></p>
+
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-25T05:46:56.002Z" itemprop="dateUpdated">2017年2月25日 0:46</time>
+    最后更新时间：<time datetime="2017-02-25T06:00:12.805Z" itemprop="dateUpdated">2017年2月25日 1:00</time>
 </span><br>
 
 
@@ -198,6 +219,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xen/">xen</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -206,7 +229,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《xenserver-iso-4g》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《突破XenServer的4G空间，建立ISO库》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -216,7 +239,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《xenserver-iso-4g》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《突破XenServer的4G空间，建立ISO库》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -226,7 +249,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《xenserver-iso-4g》 — Fastboot...&url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&via=http://fastboot.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《突破XenServer的4G空间，建立ISO库》 — Fastboot...&url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&via=http://fastboot.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -269,7 +292,7 @@
     
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="xenserver-iso-4g" data-title="xenserver-iso-4g" data-url="http://fastboot.cn/2017/02/24/xenserver-iso-4g/"></div>
+    <div class="ds-thread" data-thread-key="xenserver-iso-4g" data-title="突破XenServer的4G空间，建立ISO库" data-url="http://fastboot.cn/2017/02/24/xenserver-iso-4g/"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
@@ -351,7 +374,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《xenserver-iso-4g》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《突破XenServer的4G空间，建立ISO库》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -361,7 +384,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《xenserver-iso-4g》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&title=《突破XenServer的4G空间，建立ISO库》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -371,7 +394,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《xenserver-iso-4g》 — Fastboot...&url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&via=http://fastboot.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《突破XenServer的4G空间，建立ISO库》 — Fastboot...&url=http://fastboot.cn/2017/02/24/xenserver-iso-4g/&via=http://fastboot.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
