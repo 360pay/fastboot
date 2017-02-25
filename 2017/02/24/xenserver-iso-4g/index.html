@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://fastboot.cn/2017/02/24/xenserver-iso-4g/index.html">
 <meta property="og:site_name" content="Fastboot...">
 <meta property="og:description" content="一、查看lvm分区情况[root@localhost ~]# vgdisplay  — Volume group —  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea  System ID  Format                lvm2  Metadata Areas        1  Me">
-<meta property="og:updated_time" content="2017-02-25T06:00:12.805Z">
+<meta property="og:updated_time" content="2017-02-25T06:33:00.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="突破XenServer的4G空间，建立ISO库">
 <meta name="twitter:description" content="一、查看lvm分区情况[root@localhost ~]# vgdisplay  — Volume group —  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea  System ID  Format                lvm2  Metadata Areas        1  Me">
@@ -150,7 +150,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、查看lvm分区情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、查看lvm分区情况</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、创建一个lv分区"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、创建一个lv分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三、格式化该分区"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、格式化该分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四、创建一个挂载目录点"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、创建一个挂载目录点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#五、挂载分区"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、挂载分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#六、创建iso磁盘"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、创建iso磁盘</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#七、把挂载内容写入到fstab"><span class="post-toc-number">7.</span> <span class="post-toc-text">七、把挂载内容写入到fstab</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#八、挂载脚本写入到开机启动脚本"><span class="post-toc-number">8.</span> <span class="post-toc-text">八、挂载脚本写入到开机启动脚本</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、查看lvm分区情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、查看lvm分区情况</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、创建一个lv分区"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、创建一个lv分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三、格式化该分区"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、格式化该分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四、创建一个挂载目录点"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、创建一个挂载目录点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#五、挂载分区"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、挂载分区</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#六、创建iso磁盘"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、创建iso磁盘</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#八、挂载脚本写入到开机启动脚本"><span class="post-toc-number">7.</span> <span class="post-toc-text">八、挂载脚本写入到开机启动脚本</span></a></li></ol>
         </nav>
     </aside>
     
@@ -187,8 +187,7 @@
 <h5 id="四、创建一个挂载目录点"><a href="#四、创建一个挂载目录点" class="headerlink" title="四、创建一个挂载目录点"></a>四、创建一个挂载目录点</h5><p><code>[root@localhost ~]# mkdir /iso</code></p>
 <h5 id="五、挂载分区"><a href="#五、挂载分区" class="headerlink" title="五、挂载分区"></a>五、挂载分区</h5><p><code>[root@localhost ~]# mount /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso</code></p>
 <h5 id="六、创建iso磁盘"><a href="#六、创建iso磁盘" class="headerlink" title="六、创建iso磁盘"></a>六、创建iso磁盘</h5><p><code>[root@localhost ~]# xe-mount-iso-sr /iso -o bind</code><br><code>[root@localhost ~]# df -h</code><br>Filesystem            Size  Used Avail Use% Mounted on<br>/dev/sda1             4.0G  1.8G  2.0G  47% /<br>none                  1.9G   80K  1.9G   1% /dev/shm<br>/opt/xensource/packages/iso/XenCenter.iso<br>                       56M   56M     0 100% /var/xen/xc-install<br>/dev/mapper/VG_XenStorage–036c62ff–d373–10ec–4349–ba3ff3b211ea-iso<br>                       40G  177M   38G   1% /iso</p>
-<h5 id="七、把挂载内容写入到fstab"><a href="#七、把挂载内容写入到fstab" class="headerlink" title="七、把挂载内容写入到fstab"></a>七、把挂载内容写入到fstab</h5><p><code>[root@localhost ~]# vi /etc/fstab</code><br>LABEL=root-qhrnjadq    /         ext3     defaults   1  1<br>/var/swap/swap.001          swap      swap   defaults   0  0<br>none        /dev/pts  devpts defaults   0  0<br>none        /dev/shm  tmpfs  defaults   0  0<br>none        /proc     proc   defaults   0  0<br>none        /sys      sysfs  defaults   0  0<br>none        /sys/fs/cgroup cgroup memory 0 0<br>/opt/xensource/packages/iso/XenCenter.iso   /var/xen/xc-install   iso9660   loop,ro   0  0<br>/dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso ext3 defaults 0 0</p>
-<h5 id="八、挂载脚本写入到开机启动脚本"><a href="#八、挂载脚本写入到开机启动脚本" class="headerlink" title="八、挂载脚本写入到开机启动脚本"></a>八、挂载脚本写入到开机启动脚本</h5><p><code>[root@localhost ~]# echo &quot;xe-mount-iso-sr /iso -o bind&quot; &gt;&gt; /etc/rc.local</code></p>
+<h5 id="八、挂载脚本写入到开机启动脚本"><a href="#八、挂载脚本写入到开机启动脚本" class="headerlink" title="八、挂载脚本写入到开机启动脚本"></a>八、挂载脚本写入到开机启动脚本</h5><p><code>[root@localhost ~]# echo &quot;vgchange -ay&quot; &gt;&gt; /etc/rc.local</code><br><code>[root@localhost ~]# echo &quot;mount /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso&quot; &gt;&gt; /etc/rc.local</code></p>
 
         </div>
 
@@ -196,7 +195,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-25T06:00:12.805Z" itemprop="dateUpdated">2017年2月25日 1:00</time>
+    最后更新时间：<time datetime="2017-02-25T06:33:00.821Z" itemprop="dateUpdated">2017年2月25日 1:33</time>
 </span><br>
 
 

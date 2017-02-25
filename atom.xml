@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fastboot.cn/"/>
-  <updated>2017-02-25T06:00:12.805Z</updated>
+  <updated>2017-02-25T06:33:00.821Z</updated>
   <id>http://fastboot.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://fastboot.cn/2017/02/24/xenserver-iso-4g/"/>
     <id>http://fastboot.cn/2017/02/24/xenserver-iso-4g/</id>
     <published>2017-02-25T00:46:55.000Z</published>
-    <updated>2017-02-25T06:00:12.805Z</updated>
+    <updated>2017-02-25T06:33:00.821Z</updated>
     
     <content type="html"><![CDATA[<h5 id="一、查看lvm分区情况"><a href="#一、查看lvm分区情况" class="headerlink" title="一、查看lvm分区情况"></a>一、查看lvm分区情况</h5><p><code>[root@localhost ~]# vgdisplay</code><br>  — Volume group —<br>  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  System ID<br>  Format                lvm2<br>  Metadata Areas        1<br>  Metadata Sequence No  2<br>  VG Access             read/write<br>  VG Status             resizable<br>  MAX LV                0<br>  Cur LV                1<br>  Open LV               0<br>  Max PV                0<br>  Cur PV                1<br>  Act PV                1<br>  VG Size               141.04 GB<br>  PE Size               4.00 MB<br>  Total PE              36106<br>  Alloc PE / Size       1 / 4.00 MB<br>  Free  PE / Size       36105 / 141.04 GB<br>  VG UUID               VWGoCs-F44s-rtXU-hHv0-jCZ5-AQyS-GcPuLf<br><code>[root@localhost ~]# lvdisplay</code><br>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/MGT<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                VW5rW0-p6LA-eL16-TnxR-o3xL-n1i2-Qq8Qo8<br>  LV Write Access        read/write<br>  LV Status              available</p>
 <p>  #open                 0<br>  LV Size                4.00 MB<br>  Current LE             1<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:0</p>
@@ -34,8 +34,7 @@
 <h5 id="四、创建一个挂载目录点"><a href="#四、创建一个挂载目录点" class="headerlink" title="四、创建一个挂载目录点"></a>四、创建一个挂载目录点</h5><p><code>[root@localhost ~]# mkdir /iso</code></p>
 <h5 id="五、挂载分区"><a href="#五、挂载分区" class="headerlink" title="五、挂载分区"></a>五、挂载分区</h5><p><code>[root@localhost ~]# mount /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso</code></p>
 <h5 id="六、创建iso磁盘"><a href="#六、创建iso磁盘" class="headerlink" title="六、创建iso磁盘"></a>六、创建iso磁盘</h5><p><code>[root@localhost ~]# xe-mount-iso-sr /iso -o bind</code><br><code>[root@localhost ~]# df -h</code><br>Filesystem            Size  Used Avail Use% Mounted on<br>/dev/sda1             4.0G  1.8G  2.0G  47% /<br>none                  1.9G   80K  1.9G   1% /dev/shm<br>/opt/xensource/packages/iso/XenCenter.iso<br>                       56M   56M     0 100% /var/xen/xc-install<br>/dev/mapper/VG_XenStorage–036c62ff–d373–10ec–4349–ba3ff3b211ea-iso<br>                       40G  177M   38G   1% /iso</p>
-<h5 id="七、把挂载内容写入到fstab"><a href="#七、把挂载内容写入到fstab" class="headerlink" title="七、把挂载内容写入到fstab"></a>七、把挂载内容写入到fstab</h5><p><code>[root@localhost ~]# vi /etc/fstab</code><br>LABEL=root-qhrnjadq    /         ext3     defaults   1  1<br>/var/swap/swap.001          swap      swap   defaults   0  0<br>none        /dev/pts  devpts defaults   0  0<br>none        /dev/shm  tmpfs  defaults   0  0<br>none        /proc     proc   defaults   0  0<br>none        /sys      sysfs  defaults   0  0<br>none        /sys/fs/cgroup cgroup memory 0 0<br>/opt/xensource/packages/iso/XenCenter.iso   /var/xen/xc-install   iso9660   loop,ro   0  0<br>/dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso ext3 defaults 0 0</p>
-<h5 id="八、挂载脚本写入到开机启动脚本"><a href="#八、挂载脚本写入到开机启动脚本" class="headerlink" title="八、挂载脚本写入到开机启动脚本"></a>八、挂载脚本写入到开机启动脚本</h5><p><code>[root@localhost ~]# echo &quot;xe-mount-iso-sr /iso -o bind&quot; &gt;&gt; /etc/rc.local</code></p>
+<h5 id="八、挂载脚本写入到开机启动脚本"><a href="#八、挂载脚本写入到开机启动脚本" class="headerlink" title="八、挂载脚本写入到开机启动脚本"></a>八、挂载脚本写入到开机启动脚本</h5><p><code>[root@localhost ~]# echo &quot;vgchange -ay&quot; &gt;&gt; /etc/rc.local</code><br><code>[root@localhost ~]# echo &quot;mount /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso /iso&quot; &gt;&gt; /etc/rc.local</code></p>
 ]]></content>
     
     <summary type="html">
