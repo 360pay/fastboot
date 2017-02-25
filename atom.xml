@@ -92,30 +92,6 @@
   </entry>
   
   <entry>
-    <title>xenserver如何完美的创建本地ISO库</title>
-    <link href="http://fastboot.cn/2017/02/03/xen-iso/"/>
-    <id>http://fastboot.cn/2017/02/03/xen-iso/</id>
-    <published>2017-02-03T17:27:26.000Z</published>
-    <updated>2017-02-13T04:15:19.843Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="一、xenserver推荐的方式是"><a href="#一、xenserver推荐的方式是" class="headerlink" title="一、xenserver推荐的方式是"></a>一、xenserver推荐的方式是</h4><p>使用一个服务器之外的共享存储挂载iso文件。由于新买的服务器cpu与原有的池不兼容，所以暂时先使用本地存储的iso库。由于xcp主机默认的根分区只有4G的存储空间，一两个iso文件就会导致主机空间使用完。</p>
-<h4 id="二、首先查看分区"><a href="#二、首先查看分区" class="headerlink" title="二、首先查看分区"></a>二、首先查看分区</h4><p><code>df -h</code><br>Filesystem            Size  Used Avail Use% Mounted on<br>/dev/sda1             4.0G  1.8G  2.0G  47% /<br>none                  298M   36K  298M   1% /dev/shm<br>/opt/xensource/packages/iso/XenCenter.iso  56M   56M     0 100% /var/xen/xc-install<br>/dev/mapper/XSLocalEXT–9c2b431b–6e37–dbbd–9c2d–96804449f3cc-9c2b431b–6e37–dbbd–9c2d–96804449f3cc   542G  4.9G  509G   1% /var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc<br>看到了吧，跟分区总共才4G大小，我们首先在/var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc（硬盘的存储分区放vm虚拟机的）创建一个目录取名叫iso，以后的ISO文件都上传到这里</p>
-<h4 id="三、然后我们到-根分区创建一个软链接。不做软链接的话，空间不足。"><a href="#三、然后我们到-根分区创建一个软链接。不做软链接的话，空间不足。" class="headerlink" title="三、然后我们到/根分区创建一个软链接。不做软链接的话，空间不足。"></a>三、然后我们到/根分区创建一个软链接。不做软链接的话，空间不足。</h4><p><code>ln -s /var/run/sr-mount/9c2b431b-6e37-dbbd-9c2d-96804449f3cc/iso /iso</code></p>
-<h4 id="四、然后我们再创建ISO库"><a href="#四、然后我们再创建ISO库" class="headerlink" title="四、然后我们再创建ISO库"></a>四、然后我们再创建ISO库</h4><p><code>xe sr-create name-label=ISO type=iso device-config:location=/iso  device-config:legacy_mode=true content-type=iso</code><br>然后再去看下是不是多了一个本地的ISO库。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;一、xenserver推荐的方式是&quot;&gt;&lt;a href=&quot;#一、xenserver推荐的方式是&quot; class=&quot;headerlink&quot; title=&quot;一、xenserver推荐的方式是&quot;&gt;&lt;/a&gt;一、xenserver推荐的方式是&lt;/h4&gt;&lt;p&gt;使用一个服务器之外的
-    
-    </summary>
-    
-    
-      <category term="xen" scheme="http://fastboot.cn/tags/xen/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VPS促销价格</title>
     <link href="http://fastboot.cn/2017/02/03/vpscuxiao/"/>
     <id>http://fastboot.cn/2017/02/03/vpscuxiao/</id>
