@@ -13,29 +13,23 @@
     
     
     
-    <title>一、部署KVM | Fastboot... | Hi,Welcome To My Blog.</title>
+    <title>二、KVM中创建桥接网络 | Fastboot... | Hi,Welcome To My Blog.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="kvm">
-    <meta name="description" content="刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面
-
-[root@localhost ~]# mkdir /mnt/cdrom[root@localhost ~]# mount -o loop -t iso9660 /home/iso/CentOS-7-x86_6">
+    <meta name="description" content="[root@localhost ~]# cd /etc/sysconfig/network-scripts/[root@localhost ~]# cp ifcfg-em1 /root#备份一份[root@localhost ~]# cp ifcfg-em1 ifcfg-br0#复制一份作为桥接的[root@localhost ~]# vi ifcfg-em1TYPE=EthernetBOOTPR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一、部署KVM">
-<meta property="og:url" content="http://fastboot.cn/2017/02/25/kvm-1/index.html">
+<meta property="og:title" content="二、KVM中创建桥接网络">
+<meta property="og:url" content="http://fastboot.cn/2017/02/25/kvm-2/index.html">
 <meta property="og:site_name" content="Fastboot...">
-<meta property="og:description" content="刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面
-
-[root@localhost ~]# mkdir /mnt/cdrom[root@localhost ~]# mount -o loop -t iso9660 /home/iso/CentOS-7-x86_6">
-<meta property="og:updated_time" content="2017-02-25T10:57:59.759Z">
+<meta property="og:description" content="[root@localhost ~]# cd /etc/sysconfig/network-scripts/[root@localhost ~]# cp ifcfg-em1 /root#备份一份[root@localhost ~]# cp ifcfg-em1 ifcfg-br0#复制一份作为桥接的[root@localhost ~]# vi ifcfg-em1TYPE=EthernetBOOTPR">
+<meta property="og:updated_time" content="2017-02-25T11:40:56.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一、部署KVM">
-<meta name="twitter:description" content="刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载CentOS-7-x86_64-DVD-1611.iso到系统里面
-
-[root@localhost ~]# mkdir /mnt/cdrom[root@localhost ~]# mount -o loop -t iso9660 /home/iso/CentOS-7-x86_6">
+<meta name="twitter:title" content="二、KVM中创建桥接网络">
+<meta name="twitter:description" content="[root@localhost ~]# cd /etc/sysconfig/network-scripts/[root@localhost ~]# cp ifcfg-em1 /root#备份一份[root@localhost ~]# cp ifcfg-em1 ifcfg-br0#复制一份作为桥接的[root@localhost ~]# vi ifcfg-em1TYPE=EthernetBOOTPR">
     
         <link rel="alternative" href="/atom.xml" title="Fastboot..." type="application/atom+xml">
     
@@ -112,7 +106,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">一、部署KVM</div>
+        <div class="flex-col header-title ellipsis">二、KVM中创建桥接网络</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +128,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">一、部署KVM</h1>
+        <h1 class="title">二、KVM中创建桥接网络</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-02-25T05:49:25.000Z" itemprop="datePublished" class="page-time">
@@ -153,11 +147,11 @@
 
 <div class="container body-wrap">
     
-<article id="post-kvm-1"
+<article id="post-kvm-2"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">一、部署KVM</h1>
+        <h1 class="post-card-title">二、KVM中创建桥接网络</h1>
         <div class="post-meta">
             <time class="post-time" title="2017年02月25日 0:49" datetime="2017-02-25T05:49:25.000Z"  itemprop="datePublished">2017-02-25</time>
 
@@ -174,10 +168,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <blockquote>
-<p>刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载<a href="http://mirrors.ustc.edu.cn/centos/7.3.1611/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso" target="_blank" rel="external">CentOS-7-x86_64-DVD-1611.iso</a>到系统里面</p>
-</blockquote>
-<p><code>[root@localhost ~]# mkdir /mnt/cdrom</code><br><code>[root@localhost ~]# mount -o loop -t iso9660 /home/iso/CentOS-7-x86_64-DVD-1611.iso /mnt/cdrom/</code><br><code>[root@localhost ~]# cd /etc/yum.repos.d/</code><br><code>[root@localhost ~]# mkdir repos.bak &amp;&amp; mv *.repo repos.bak/</code><br><code>[root@localhost ~]# vi CentOS-Local.repo</code><br>[localcdrom]<br>name=CentOS-$releasever -Local CDROM<br>baseurl=file:///mnt/cdrom<br>gpgcheck=0<br>enabled=1<br><code>[root@localhost ~]# yum clean all</code><br><code>[root@localhost ~]# yum groupinstall &quot;virtualization-hypervisor&quot; &quot;virtualization-platform&quot; &quot;virtualization-tools&quot; &quot;virtualization-client&quot; &quot;X Window System&quot;  -y</code></p>
+            <p><code>[root@localhost ~]# cd /etc/sysconfig/network-scripts/</code><br><code>[root@localhost ~]# cp ifcfg-em1 /root</code>#备份一份<br><code>[root@localhost ~]# cp ifcfg-em1 ifcfg-br0</code>#复制一份作为桥接的<br><code>[root@localhost ~]# vi ifcfg-em1</code><br>TYPE=Ethernet<br>BOOTPROTO=none<br>NAME=em1<br>UUID=c67149b4-1c27-439f-8964-4df086d007bf<br>DEVICE=em1<br>ONBOOT=yes<br>BRIDGE=br0<br><code>[root@localhost ~]# vi ifcfg-br0</code><br>TYPE=bridge<br>BOOTPROTO=none<br>DEVICE=br0<br>ONBOOT=yes<br>IPADDR=202.97.10.18<br>PREFIX=26<br>GATEWAY=202.97.10.1<br><code>[root@localhost ~]# service network restart</code></p>
 
         </div>
 
@@ -185,11 +176,11 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-25T10:57:59.759Z" itemprop="dateUpdated">2017年2月25日 5:57</time>
+    最后更新时间：<time datetime="2017-02-25T11:40:56.758Z" itemprop="dateUpdated">2017年2月25日 6:40</time>
 </span><br>
 
 
-        转载请注明出处：<a href="/2017/02/25/kvm-1/" target="_blank" rel="external">http://fastboot.cn/2017/02/25/kvm-1/</a>
+        转载请注明出处：<a href="/2017/02/25/kvm-2/" target="_blank" rel="external">http://fastboot.cn/2017/02/25/kvm-2/</a>
     </div>
     <footer>
         <a href="http://fastboot.cn">
@@ -218,7 +209,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/25/kvm-1/&title=《一、部署KVM》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/25/kvm-2/&title=《二、KVM中创建桥接网络》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -228,22 +219,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/25/kvm-1/&title=《一、部署KVM》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/25/kvm-2/&title=《二、KVM中创建桥接网络》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/25/kvm-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/25/kvm-2/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《一、部署KVM》 — Fastboot...&url=http://fastboot.cn/2017/02/25/kvm-1/&via=http://fastboot.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《二、KVM中创建桥接网络》 — Fastboot...&url=http://fastboot.cn/2017/02/25/kvm-2/&via=http://fastboot.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/25/kvm-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/25/kvm-2/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -263,14 +254,21 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/02/25/kvm-1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">一、部署KVM</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/02/25/kvm-2/" id="post-next" class="post-nav-link">
+      <a href="/2017/02/24/xenserver-iso-4g/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">二、KVM中创建桥接网络</h4>
+        <h4 class="title">突破XenServer的4G空间，建立ISO库</h4>
       </a>
     </div>
   
@@ -281,7 +279,7 @@
     
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="kvm-1" data-title="一、部署KVM" data-url="http://fastboot.cn/2017/02/25/kvm-1/"></div>
+    <div class="ds-thread" data-thread-key="kvm-2" data-title="二、KVM中创建桥接网络" data-url="http://fastboot.cn/2017/02/25/kvm-2/"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
@@ -363,7 +361,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/25/kvm-1/&title=《一、部署KVM》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://fastboot.cn/2017/02/25/kvm-2/&title=《二、KVM中创建桥接网络》 — Fastboot...&pic=http://fastboot.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -373,22 +371,22 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/25/kvm-1/&title=《一、部署KVM》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fastboot.cn/2017/02/25/kvm-2/&title=《二、KVM中创建桥接网络》 — Fastboot...&source=This is My Blog it fastboot." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/25/kvm-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://fastboot.cn/2017/02/25/kvm-2/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《一、部署KVM》 — Fastboot...&url=http://fastboot.cn/2017/02/25/kvm-1/&via=http://fastboot.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《二、KVM中创建桥接网络》 — Fastboot...&url=http://fastboot.cn/2017/02/25/kvm-2/&via=http://fastboot.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/25/kvm-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://fastboot.cn/2017/02/25/kvm-2/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -399,7 +397,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3aQY6DMAwF0N7/0h1pViN1AH+bpCxeVhUF+tJFlHz79SqP9+/4vPJ3fN55fs/nO28buLi4Y+77dBwhKm/rTeDoHlxc3P3c88Wr9wNHP3k+pQsbLi7uw7jzTUy6OOLi4j6fW1+Y6k/h4uI+mVvfrNTp54jlZzVcXNwBNw1MV3xemO/i4uKG3Hc45stQ/al/3oOLi7uFe15ATUut9eJrPZAN6r24uLi3clNQLxDplWkv0Li4uFu4aWA6KaymfxkuLu4TuPOotBfFptPDxcVdwU2LrGnbVhqLXCx/uLi4i7m94kfaltHbQl0sYbi4uMu4pUaoVjm2HoWMmi1wcXEXcyfHlUqoml6/mCouLu4ybrO02SrDpDhcXNzvciu7iPRQlBZjSu/BxcXdwk0f6DVS1DdGcb6Li4u7gFvffPQi0V50cngFFxd3I3cej/aONOnEcHFxd3JXtFJNro/KJ7i4uGPuvcXXeWhS/xYXF3c1Nw0s0iaqmxc4XFzcjdx63JluleYL4mG+i4uL+wDupM0ijWIPbbi4uI/kphuUSckWFxf3u9xJSFovokxaN3BxcXdy08C0frxJD0K9ieHi4t7K/QFVdCULrQVonAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvElEQVR42u3aQXLDIAwF0Nz/0u4B2uIvBJTpPFaZ2MHPWWiEpM8nXs+3Nb5z/Ktkn9bCxcVtc5/h+u0B+QuMd8gNuLi457lJSBo/Pn+xMf3FhouLeyV3DK3eg4uL+z+4rQQlSHdwcXHv4c6lIP3jzcazGi4uboObVyn3fd5S38XFxZ3iPsU1V2BdtXBxcc9wV6Uveeu0nzbh4uLu5iZli6RlklzNoeUQhouLu42bh6qk2NoZ1XrJyHBxcY9w86QkL4z2d/jhKi4u7kFuNWXZMaIRPRcXF/cgtzpmsaq7US6d4OLiHuSuSms6BdMoIOLi4h7hzo1M5QlKeRwzCa+4uLibuWNEvlE0NhE0S16+wcXFPcKthpW5VCaaAanug4uLu5mbJzR5YzUvj+ZlF1xc3L/idoJXOU2J78fFxb2N2xnbmlsv++Di4m7mzrVIq4MU1e+jGImLi7uNWw0uOWvuaNQpoODi4q7lVgsWVXq1ofLyMri4uAe5c4GmWkaptk+igikuLu413LzJmo9tRX8QLi7u9dzqAWZudGNZIMPFxS1yq4eZTjl1LhTi4uKe5K4tblbTmiTRwcXFPcj9AtSqSOd0pwyOAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

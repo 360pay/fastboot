@@ -41,6 +41,27 @@
   </entry>
   
   <entry>
+    <title>二、KVM中创建桥接网络</title>
+    <link href="http://fastboot.cn/2017/02/25/kvm-2/"/>
+    <id>http://fastboot.cn/2017/02/25/kvm-2/</id>
+    <published>2017-02-25T05:49:25.000Z</published>
+    <updated>2017-02-25T11:40:56.758Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>[root@localhost ~]# cd /etc/sysconfig/network-scripts/</code><br><code>[root@localhost ~]# cp ifcfg-em1 /root</code>#备份一份<br><code>[root@localhost ~]# cp ifcfg-em1 ifcfg-br0</code>#复制一份作为桥接的<br><code>[root@localhost ~]# vi ifcfg-em1</code><br>TYPE=Ethernet<br>BOOTPROTO=none<br>NAME=em1<br>UUID=c67149b4-1c27-439f-8964-4df086d007bf<br>DEVICE=em1<br>ONBOOT=yes<br>BRIDGE=br0<br><code>[root@localhost ~]# vi ifcfg-br0</code><br>TYPE=bridge<br>BOOTPROTO=none<br>DEVICE=br0<br>ONBOOT=yes<br>IPADDR=202.97.10.18<br>PREFIX=26<br>GATEWAY=202.97.10.1<br><code>[root@localhost ~]# service network restart</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;[root@localhost ~]# cd /etc/sysconfig/network-scripts/&lt;/code&gt;&lt;br&gt;&lt;code&gt;[root@localhost ~]# cp ifcfg-em1 /root&lt;/code&gt;#备份一份&lt;br&gt;&lt;code&gt;
+    
+    </summary>
+    
+    
+      <category term="kvm" scheme="http://fastboot.cn/tags/kvm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>突破XenServer的4G空间，建立ISO库</title>
     <link href="http://fastboot.cn/2017/02/24/xenserver-iso-4g/"/>
     <id>http://fastboot.cn/2017/02/24/xenserver-iso-4g/</id>
