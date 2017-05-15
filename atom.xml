@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fastboot.cn/"/>
-  <updated>2017-05-15T03:14:27.873Z</updated>
+  <updated>2017-05-15T03:16:23.099Z</updated>
   <id>http://fastboot.cn/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://fastboot.cn/2017/05/15/vpn/"/>
     <id>http://fastboot.cn/2017/05/15/vpn/</id>
     <published>2017-05-15T11:49:25.000Z</published>
-    <updated>2017-05-15T03:14:27.873Z</updated>
+    <updated>2017-05-15T03:16:23.099Z</updated>
     
-    <content type="html"><![CDATA[<h6 id="Android"><a href="#Android" class="headerlink" title="Android"></a><a href="http://fastboot.cn/vpn/Android.htm?_blank">Android</a></h6>]]></content>
+    <content type="html"><![CDATA[<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a><a href="http://fastboot.cn/vpn/Android.htm ?_blank">Android</a></h3>]]></content>
     
     <summary type="html">
     
-      &lt;h6 id=&quot;Android&quot;&gt;&lt;a href=&quot;#Android&quot; class=&quot;headerlink&quot; title=&quot;Android&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://fastboot.cn/vpn/Android.htm?_blank&quot;&gt;Android&lt;/a&gt;&lt;/
+      &lt;h3 id=&quot;Android&quot;&gt;&lt;a href=&quot;#Android&quot; class=&quot;headerlink&quot; title=&quot;Android&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://fastboot.cn/vpn/Android.htm ?_blank&quot;&gt;Android&lt;/a&gt;&lt;
     
     </summary>
     
