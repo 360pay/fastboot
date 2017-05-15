@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://fastboot.cn/2017/02/24/xenserver-iso-4g/index.html">
 <meta property="og:site_name" content="Fastboot...">
 <meta property="og:description" content="一、查看lvm分区情况[root@localhost ~]# vgdisplay  — Volume group —  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea  System ID  Format                lvm2  Metadata Areas        1  Me">
-<meta property="og:updated_time" content="2017-02-25T06:33:00.821Z">
+<meta property="og:updated_time" content="2017-03-08T05:10:07.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="突破XenServer的4G空间，建立ISO库">
 <meta name="twitter:description" content="一、查看lvm分区情况[root@localhost ~]# vgdisplay  — Volume group —  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea  System ID  Format                lvm2  Metadata Areas        1  Me">
@@ -175,8 +175,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h5 id="一、查看lvm分区情况"><a href="#一、查看lvm分区情况" class="headerlink" title="一、查看lvm分区情况"></a>一、查看lvm分区情况</h5><p><code>[root@localhost ~]# vgdisplay</code><br>  — Volume group —<br>  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  System ID<br>  Format                lvm2<br>  Metadata Areas        1<br>  Metadata Sequence No  2<br>  VG Access             read/write<br>  VG Status             resizable<br>  MAX LV                0<br>  Cur LV                1<br>  Open LV               0<br>  Max PV                0<br>  Cur PV                1<br>  Act PV                1<br>  VG Size               141.04 GB<br>  PE Size               4.00 MB<br>  Total PE              36106<br>  Alloc PE / Size       1 / 4.00 MB<br>  Free  PE / Size       36105 / 141.04 GB<br>  VG UUID               VWGoCs-F44s-rtXU-hHv0-jCZ5-AQyS-GcPuLf<br><code>[root@localhost ~]# lvdisplay</code><br>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/MGT<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                VW5rW0-p6LA-eL16-TnxR-o3xL-n1i2-Qq8Qo8<br>  LV Write Access        read/write<br>  LV Status              available</p>
-<p>  #open                 0<br>  LV Size                4.00 MB<br>  Current LE             1<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:0</p>
+            <h5 id="一、查看lvm分区情况"><a href="#一、查看lvm分区情况" class="headerlink" title="一、查看lvm分区情况"></a>一、查看lvm分区情况</h5><p><code>[root@localhost ~]# vgdisplay</code><br>  — Volume group —<br>  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  System ID<br>  Format                lvm2<br>  Metadata Areas        1<br>  Metadata Sequence No  2<br>  VG Access             read/write<br>  VG Status             resizable<br>  MAX LV                0<br>  Cur LV                1<br>  Open LV               0<br>  Max PV                0<br>  Cur PV                1<br>  Act PV                1<br>  VG Size               141.04 GB<br>  PE Size               4.00 MB<br>  Total PE              36106<br>  Alloc PE / Size       1 / 4.00 MB<br>  Free  PE / Size       36105 / 141.04 GB<br>  VG UUID               VWGoCs-F44s-rtXU-hHv0-jCZ5-AQyS-GcPuLf</p>
 <h5 id="二、创建一个lv分区"><a href="#二、创建一个lv分区" class="headerlink" title="二、创建一个lv分区"></a>二、创建一个lv分区</h5><p><code>[root@localhost ~]# lvcreate -n iso -L +40G VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea</code><br>  Logical volume “iso” created<br><code>[root@localhost ~]# lvdisplay</code><br>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/MGT<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                VW5rW0-p6LA-eL16-TnxR-o3xL-n1i2-Qq8Qo8<br>  LV Write Access        read/write<br>  LV Status              available</p>
 <p>  #open                 0<br>  LV Size                4.00 MB<br>  Current LE             1<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:0</p>
 <p>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                392U7I-cC13-LOvu-wnGT-8MVZ-iGME-cKrVL3<br>  LV Write Access        read/write<br>  LV Status              available</p>
@@ -195,7 +194,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-25T06:33:00.821Z" itemprop="dateUpdated">2017年2月25日 1:33</time>
+    最后更新时间：<time datetime="2017-03-08T05:10:07.546Z" itemprop="dateUpdated">2017年3月8日 0:10</time>
 </span><br>
 
 

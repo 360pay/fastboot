@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fastboot.cn/"/>
-  <updated>2017-02-25T10:57:59.759Z</updated>
+  <updated>2017-05-15T03:14:27.873Z</updated>
   <id>http://fastboot.cn/</id>
   
   <author>
@@ -16,11 +16,89 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vpn连接方式</title>
+    <link href="http://fastboot.cn/2017/05/15/vpn/"/>
+    <id>http://fastboot.cn/2017/05/15/vpn/</id>
+    <published>2017-05-15T11:49:25.000Z</published>
+    <updated>2017-05-15T03:14:27.873Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="Android"><a href="#Android" class="headerlink" title="Android"></a><a href="http://fastboot.cn/vpn/Android.htm?_blank">Android</a></h6>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h6 id=&quot;Android&quot;&gt;&lt;a href=&quot;#Android&quot; class=&quot;headerlink&quot; title=&quot;Android&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://fastboot.cn/vpn/Android.htm?_blank&quot;&gt;Android&lt;/a&gt;&lt;/
+    
+    </summary>
+    
+    
+      <category term="kvm" scheme="http://fastboot.cn/tags/kvm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux不重启识别新添加的磁盘</title>
+    <link href="http://fastboot.cn/2017/03/01/scandisk/"/>
+    <id>http://fastboot.cn/2017/03/01/scandisk/</id>
+    <published>2017-03-01T14:53:05.000Z</published>
+    <updated>2017-03-01T07:07:10.219Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>现网的一台kvm 下的虚拟机一般在进行配置变更后都会通过重启来识别新增的配置，不过业务侧某台主机因为业务需要无法重启，想通过不重启直接识别护容上去的新磁盘。经和负责kvm 的兄弟进行测试，发现如下方可以解决。</p>
+</blockquote>
+<ol>
+<li>通过kvm 控制台为虚拟机新增磁盘（步骤略）</li>
+<li>执行如下命令扫盘·<br><code>echo &quot;- - -&quot; &gt;  /sys/class/scsi_host/host0/scan</code></li>
+</ol>
+<blockquote>
+<p>然后再运行fdisk -l 就能发现新添加的硬盘已经被系统识别了，查看系统日志/var/log/messages，发现对SCSI设备进行了一次重新扫描。需要注意的是echo的三个- – -号之间有空隔。</p>
+</blockquote>
+<ul>
+<li>以下是执行结果：</li>
+</ul>
+<p><code>[root@localhost ~]# fdisk -l
+Disk /dev/sda: 21.4 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1          13      104391   83  Linux
+/dev/sda2              14        2610    20860402+  8e  Linux LVM
+[root@localhost ~]# echo &quot;- - -&quot; &gt; /sys/class/scsi_host/host0/scan
+[root@localhost ~]# fdisk -l
+Disk /dev/sda: 21.4 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1          13      104391   83  Linux
+/dev/sda2              14        2610    20860402+  8e  Linux LVM
+Disk /dev/sdb: 21.4 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Disk /dev/sdb doesn&#39;t contain a valid partition table</code> </p>
+<blockquote>
+<p>有没有点似曾相似的感觉，在更换FC HBA卡、存储划LUN和去LUN操作时，也是echo 三个横杠到scan 文件重新描盘。只不echo的是host4 、hosts5 。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;现网的一台kvm 下的虚拟机一般在进行配置变更后都会通过重启来识别新增的配置，不过业务侧某台主机因为业务需要无法重启，想通过不重启直接识别护容上去的新磁盘。经和负责kvm 的兄弟进行测试，发现如下方可以解决。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://fastboot.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一、部署KVM</title>
     <link href="http://fastboot.cn/2017/02/25/kvm-1/"/>
     <id>http://fastboot.cn/2017/02/25/kvm-1/</id>
     <published>2017-02-25T05:49:25.000Z</published>
-    <updated>2017-02-25T10:57:59.759Z</updated>
+    <updated>2017-02-28T02:16:41.125Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>刻录CentOS-7-x86_64-Minimal-1611.iso安装centos.7.3，安装完成之后上传或者下载<a href="http://mirrors.ustc.edu.cn/centos/7.3.1611/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso" target="_blank" rel="external">CentOS-7-x86_64-DVD-1611.iso</a>到系统里面</p>
@@ -45,14 +123,14 @@
     <link href="http://fastboot.cn/2017/02/25/kvm-2/"/>
     <id>http://fastboot.cn/2017/02/25/kvm-2/</id>
     <published>2017-02-25T05:49:25.000Z</published>
-    <updated>2017-02-25T11:42:49.227Z</updated>
+    <updated>2017-02-28T02:16:41.127Z</updated>
     
-    <content type="html"><![CDATA[<p><code>[root@localhost ~]# cd /etc/sysconfig/network-scripts/</code><br><code>[root@localhost ~]# cp ifcfg-em1 /root</code>#备份一份<br><code>[root@localhost ~]# cp ifcfg-em1 ifcfg-br0</code>#复制一份作为桥接的<br><code>[root@localhost ~]# vi ifcfg-em1</code><br>TYPE=Ethernet<br>BOOTPROTO=none<br>UUID=c67149b4-1c27-439f-8964-4df086d007bf<br>DEVICE=em1<br>ONBOOT=yes<br>BRIDGE=br0<br><code>[root@localhost ~]# vi ifcfg-br0</code><br>TYPE=bridge<br>BOOTPROTO=none<br>DEVICE=br0<br>ONBOOT=yes<br>IPADDR=202.97.10.18<br>PREFIX=26<br>GATEWAY=202.97.10.1<br><code>[root@localhost ~]# service network restart</code></p>
+    <content type="html"><![CDATA[<p><code>[root@localhost ~]# systemctl stop firewalld &amp;&amp;  systemctl disable firewalld</code><br><code>[root@localhost ~]# cd /etc/sysconfig/network-scripts/</code><br><code>[root@localhost ~]# cp ifcfg-em1 /root</code>#备份一份<br><code>[root@localhost ~]# cp ifcfg-em1 ifcfg-br0</code>#复制一份作为桥接的<br><code>[root@localhost ~]# vi ifcfg-em1</code><br>TYPE=Ethernet<br>BOOTPROTO=none<br>DEVICE=em1<br>ONBOOT=yes<br>BRIDGE=br0<br><code>[root@localhost ~]# vi ifcfg-br0</code><br>TYPE=bridge<br>BOOTPROTO=none<br>DEVICE=br0<br>ONBOOT=yes<br>IPADDR=202.97.10.18<br>PREFIX=26<br>GATEWAY=202.97.10.1<br><code>[root@localhost ~]# service network restart</code></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;code&gt;[root@localhost ~]# cd /etc/sysconfig/network-scripts/&lt;/code&gt;&lt;br&gt;&lt;code&gt;[root@localhost ~]# cp ifcfg-em1 /root&lt;/code&gt;#备份一份&lt;br&gt;&lt;code&gt;
+      &lt;p&gt;&lt;code&gt;[root@localhost ~]# systemctl stop firewalld &amp;amp;&amp;amp;  systemctl disable firewalld&lt;/code&gt;&lt;br&gt;&lt;code&gt;[root@localhost ~]# cd /etc/sy
     
     </summary>
     
@@ -66,10 +144,9 @@
     <link href="http://fastboot.cn/2017/02/24/xenserver-iso-4g/"/>
     <id>http://fastboot.cn/2017/02/24/xenserver-iso-4g/</id>
     <published>2017-02-25T00:46:55.000Z</published>
-    <updated>2017-02-25T06:33:00.821Z</updated>
+    <updated>2017-03-08T05:10:07.546Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="一、查看lvm分区情况"><a href="#一、查看lvm分区情况" class="headerlink" title="一、查看lvm分区情况"></a>一、查看lvm分区情况</h5><p><code>[root@localhost ~]# vgdisplay</code><br>  — Volume group —<br>  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  System ID<br>  Format                lvm2<br>  Metadata Areas        1<br>  Metadata Sequence No  2<br>  VG Access             read/write<br>  VG Status             resizable<br>  MAX LV                0<br>  Cur LV                1<br>  Open LV               0<br>  Max PV                0<br>  Cur PV                1<br>  Act PV                1<br>  VG Size               141.04 GB<br>  PE Size               4.00 MB<br>  Total PE              36106<br>  Alloc PE / Size       1 / 4.00 MB<br>  Free  PE / Size       36105 / 141.04 GB<br>  VG UUID               VWGoCs-F44s-rtXU-hHv0-jCZ5-AQyS-GcPuLf<br><code>[root@localhost ~]# lvdisplay</code><br>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/MGT<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                VW5rW0-p6LA-eL16-TnxR-o3xL-n1i2-Qq8Qo8<br>  LV Write Access        read/write<br>  LV Status              available</p>
-<p>  #open                 0<br>  LV Size                4.00 MB<br>  Current LE             1<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:0</p>
+    <content type="html"><![CDATA[<h5 id="一、查看lvm分区情况"><a href="#一、查看lvm分区情况" class="headerlink" title="一、查看lvm分区情况"></a>一、查看lvm分区情况</h5><p><code>[root@localhost ~]# vgdisplay</code><br>  — Volume group —<br>  VG Name               VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  System ID<br>  Format                lvm2<br>  Metadata Areas        1<br>  Metadata Sequence No  2<br>  VG Access             read/write<br>  VG Status             resizable<br>  MAX LV                0<br>  Cur LV                1<br>  Open LV               0<br>  Max PV                0<br>  Cur PV                1<br>  Act PV                1<br>  VG Size               141.04 GB<br>  PE Size               4.00 MB<br>  Total PE              36106<br>  Alloc PE / Size       1 / 4.00 MB<br>  Free  PE / Size       36105 / 141.04 GB<br>  VG UUID               VWGoCs-F44s-rtXU-hHv0-jCZ5-AQyS-GcPuLf</p>
 <h5 id="二、创建一个lv分区"><a href="#二、创建一个lv分区" class="headerlink" title="二、创建一个lv分区"></a>二、创建一个lv分区</h5><p><code>[root@localhost ~]# lvcreate -n iso -L +40G VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea</code><br>  Logical volume “iso” created<br><code>[root@localhost ~]# lvdisplay</code><br>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/MGT<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                VW5rW0-p6LA-eL16-TnxR-o3xL-n1i2-Qq8Qo8<br>  LV Write Access        read/write<br>  LV Status              available</p>
 <p>  #open                 0<br>  LV Size                4.00 MB<br>  Current LE             1<br>  Segments               1<br>  Allocation             inherit<br>  Read ahead sectors     auto<br>  -currently set to     256<br>  Block device           253:0</p>
 <p>  — Logical volume —<br>  LV Name                /dev/VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea/iso<br>  VG Name                VG_XenStorage-036c62ff-d373-10ec-4349-ba3ff3b211ea<br>  LV UUID                392U7I-cC13-LOvu-wnGT-8MVZ-iGME-cKrVL3<br>  LV Write Access        read/write<br>  LV Status              available</p>
